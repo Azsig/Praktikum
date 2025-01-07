@@ -1,7 +1,7 @@
-import asyncio
+import asyncio as asy
 import websockets
 
-localhost = ""
+localhost = "192.168.78.174"
 PORT = 5000
 
 async def echo(websocket, path):
@@ -12,7 +12,7 @@ async def echo(websocket, path):
 async def main():
     async with websockets.serve(echo, localhost, PORT):
         print(f"websocket server started at ws://{localhost}:{PORT}")
-        await asyncio.Future()
+        await asy.Future()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asy.run(main())
